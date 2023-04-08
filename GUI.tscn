@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7g35yi6diitr"]
+
+[ext_resource type="Script" path="res://GUI.gd" id="1_2di1t"]
+
+[sub_resource type="SystemFont" id="SystemFont_a7d3r"]
+
+[sub_resource type="Theme" id="Theme_0vue8"]
+default_font = SubResource("SystemFont_a7d3r")
+default_font_size = 24
+Label/font_sizes/font_size = 40
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0vue8")
+script = ExtResource("1_2di1t")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 26.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="PlayerScore" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="AIScore" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 2

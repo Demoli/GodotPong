@@ -1,12 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbtpckic88hv7"]
+[gd_scene load_steps=9 format=3 uid="uid://bbtpckic88hv7"]
 
 [ext_resource type="PackedScene" uid="uid://bn7gnnjje7umg" path="res://Paddle/Paddle.tscn" id="1_80mol"]
+[ext_resource type="Script" path="res://Game.gd" id="1_n0jhy"]
+[ext_resource type="PackedScene" uid="uid://c7g35yi6diitr" path="res://GUI.tscn" id="1_rwvic"]
 [ext_resource type="Script" path="res://Paddle/PlayerPaddle.gd" id="2_arvop"]
 [ext_resource type="Script" path="res://Paddle/AIPaddle.gd" id="3_alq7y"]
 [ext_resource type="PackedScene" uid="uid://lvfvw8kevbo1" path="res://Ball/Ball.tscn" id="4_cy311"]
 [ext_resource type="PackedScene" uid="uid://dv4chqlu7roal" path="res://Wall/Wall.tscn" id="5_cif07"]
+[ext_resource type="PackedScene" uid="uid://bgnu4exi3ur2h" path="res://Goal.tscn" id="8_qqo2f"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_n0jhy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("1_rwvic")]
 
 [node name="PlayerPaddle" parent="." instance=ExtResource("1_80mol")]
 position = Vector2(60, 250)
@@ -19,15 +27,31 @@ script = ExtResource("3_alq7y")
 [node name="Ball" parent="." instance=ExtResource("4_cy311")]
 position = Vector2(400, 250)
 
-[node name="TopWall" parent="." instance=ExtResource("5_cif07")]
+[node name="Goals" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
-[node name="LeftWall" parent="." instance=ExtResource("5_cif07")]
+[node name="Goal" parent="Goals" instance=ExtResource("8_qqo2f")]
+position = Vector2(20, 250)
+player_index = 1
+
+[node name="Goal2" parent="Goals" instance=ExtResource("8_qqo2f")]
+position = Vector2(780, 250)
+
+[node name="Walls" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="TopWall" parent="Walls" instance=ExtResource("5_cif07")]
+
+[node name="LeftWall" parent="Walls" instance=ExtResource("5_cif07")]
 rotation = -1.5708
 
-[node name="RightWall" parent="." instance=ExtResource("5_cif07")]
+[node name="RightWall" parent="Walls" instance=ExtResource("5_cif07")]
 position = Vector2(800, 0)
 rotation = 1.5708
 
-[node name="BottomWall" parent="." instance=ExtResource("5_cif07")]
+[node name="BottomWall" parent="Walls" instance=ExtResource("5_cif07")]
 position = Vector2(0, 500)
-rotation = -3.14159
+rotation = 3.14159
+
+[connection signal="ball_entered" from="Goals/Goal" to="." method="_on_goal_ball_entered"]
+[connection signal="ball_entered" from="Goals/Goal2" to="." method="_on_goal_ball_entered"]

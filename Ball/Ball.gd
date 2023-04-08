@@ -2,14 +2,12 @@ class_name Ball
 extends CharacterBody2D
 
 @export var speed = -500
-
 @export var serve_angle_range = 0
-
-@export var min_deflect_angle := 15
-@export var max_deflect_angle := 50
+@export var min_deflect_angle := 20
+@export var max_deflect_angle := 60
 
 func _physics_process(delta):
-	if Input.is_action_just_released("serve"):
+	if velocity == Vector2() and Input.is_action_just_released("serve"):
 		velocity = Vector2(speed, 0) 
 	
 	var c = move_and_collide(velocity * delta)

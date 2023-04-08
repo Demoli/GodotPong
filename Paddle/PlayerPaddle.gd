@@ -1,6 +1,7 @@
 extends Paddle
 
-#@onready var velocity := Vector2()
+func _ready():
+	player_index = Game.Players.P1
 
 func _physics_process(delta):
 	
