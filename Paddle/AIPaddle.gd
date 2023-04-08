@@ -5,6 +5,10 @@ extends Paddle
 func _physics_process(delta):
 	var direction = position.direction_to(ball.position).y
 	
-	velocity = Vector2(0, direction * speed)
+	if direction:
+		velocity = Vector2(0, direction * speed)
+	else:
+		velocity = Vector2()
+		
+	super(delta)
 	
-	move_and_collide(velocity)
