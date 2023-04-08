@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbtpckic88hv7"]
+
+[ext_resource type="PackedScene" uid="uid://bn7gnnjje7umg" path="res://Paddle/Paddle.tscn" id="1_80mol"]
+[ext_resource type="Script" path="res://Paddle/PlayerPaddle.gd" id="2_arvop"]
+[ext_resource type="Script" path="res://Paddle/AIPaddle.gd" id="3_alq7y"]
+[ext_resource type="PackedScene" uid="uid://lvfvw8kevbo1" path="res://Ball/Ball.tscn" id="4_cy311"]
+[ext_resource type="PackedScene" uid="uid://dv4chqlu7roal" path="res://Wall/Wall.tscn" id="5_cif07"]
+
+[node name="Game" type="Node2D"]
+
+[node name="PlayerPaddle" parent="." instance=ExtResource("1_80mol")]
+position = Vector2(60, 250)
+script = ExtResource("2_arvop")
+
+[node name="AIPaddle" parent="." instance=ExtResource("1_80mol")]
+position = Vector2(740, 250)
+script = ExtResource("3_alq7y")
+
+[node name="Ball" parent="." instance=ExtResource("4_cy311")]
+position = Vector2(400, 250)
+
+[node name="TopWall" parent="." instance=ExtResource("5_cif07")]
+
+[node name="LeftWall" parent="." instance=ExtResource("5_cif07")]
+rotation = -1.5708
+
+[node name="RightWall" parent="." instance=ExtResource("5_cif07")]
+position = Vector2(800, 0)
+rotation = 1.5708
+
+[node name="BottomWall" parent="." instance=ExtResource("5_cif07")]
+position = Vector2(0, 500)
+rotation = -3.14159

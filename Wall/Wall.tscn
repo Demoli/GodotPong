@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv4chqlu7roal"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nhaja"]
+normal = Vector2(0, 1)
+
+[node name="Wall" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_nhaja")
