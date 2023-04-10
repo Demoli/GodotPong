@@ -5,16 +5,25 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1el04"]
 size = Vector2(5, 80)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_utint"]
-size = Vector2(5, 80)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnc85"]
+size = Vector2(5, 27)
 
 [node name="Paddle" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_2w5ce")
+metadata/_edit_horizontal_guides_ = [-20.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
 texture = SubResource("PlaceholderTexture2D_1el04")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_utint")
+[node name="Top" type="CollisionShape2D" parent="."]
+position = Vector2(0, -27)
+shape = SubResource("RectangleShape2D_cnc85")
+
+[node name="Middle" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cnc85")
+
+[node name="Bottom" type="CollisionShape2D" parent="."]
+position = Vector2(0, 27)
+shape = SubResource("RectangleShape2D_cnc85")
