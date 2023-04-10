@@ -2,6 +2,7 @@ extends Paddle
 
 func _ready():
 	player_index = Game.Players.P1
+	serve_offset = Vector2(10,0)
 
 func _physics_process(delta):
 	

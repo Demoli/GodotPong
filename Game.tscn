@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbtpckic88hv7"]
+[gd_scene load_steps=8 format=3 uid="uid://bbtpckic88hv7"]
 
 [ext_resource type="PackedScene" uid="uid://bn7gnnjje7umg" path="res://Paddle/Paddle.tscn" id="1_80mol"]
 [ext_resource type="Script" path="res://Game.gd" id="1_n0jhy"]
 [ext_resource type="PackedScene" uid="uid://c7g35yi6diitr" path="res://GUI.tscn" id="1_rwvic"]
 [ext_resource type="Script" path="res://Paddle/PlayerPaddle.gd" id="2_arvop"]
 [ext_resource type="Script" path="res://Paddle/AIPaddle.gd" id="3_alq7y"]
-[ext_resource type="PackedScene" uid="uid://lvfvw8kevbo1" path="res://Ball/Ball.tscn" id="4_cy311"]
 [ext_resource type="PackedScene" uid="uid://dv4chqlu7roal" path="res://Wall/Wall.tscn" id="5_cif07"]
 [ext_resource type="PackedScene" uid="uid://bgnu4exi3ur2h" path="res://Goal.tscn" id="8_qqo2f"]
 
@@ -23,9 +22,6 @@ script = ExtResource("2_arvop")
 [node name="AIPaddle" parent="." instance=ExtResource("1_80mol")]
 position = Vector2(740, 250)
 script = ExtResource("3_alq7y")
-
-[node name="Ball" parent="." instance=ExtResource("4_cy311")]
-position = Vector2(400, 250)
 
 [node name="Goals" type="Node2D" parent="."]
 metadata/_edit_lock_ = true

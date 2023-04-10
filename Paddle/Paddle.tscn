@@ -27,3 +27,8 @@ shape = SubResource("RectangleShape2D_cnc85")
 [node name="Bottom" type="CollisionShape2D" parent="."]
 position = Vector2(0, 27)
 shape = SubResource("RectangleShape2D_cnc85")
+
+[node name="ServeTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="ServeTimer" to="." method="_on_serve_timer_timeout"]
