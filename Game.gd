@@ -23,7 +23,7 @@ var scores = {
 }
 
 func _ready():
-	reset_ball(Players.CPU1)
+	reset_ball(Players.P1)
 
 func _on_goal_ball_entered(goal: Goal):
 	scores[goal.player_index] += 1

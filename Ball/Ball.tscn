@@ -14,7 +14,7 @@ script = ExtResource("1_swbt6")
 max_deflect_angle = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0, 0, 1, 1)
 texture = SubResource("PlaceholderTexture2D_k0a5i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
